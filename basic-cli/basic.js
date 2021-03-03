@@ -45,8 +45,8 @@ wss.on('request', function(req) {
     conn.on('close', function(reason, desc) {
         conn = null;
 
-        rl.prompt();
         console.log("\n# CONNECTION CLOSED");
+        rl.prompt();
     });
 });
 
