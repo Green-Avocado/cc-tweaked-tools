@@ -32,25 +32,33 @@ var conn = null;
 wss.on('request', function(req) {
     if(!conn) {
         conn = req.accept();
-        console.log("\nCONNECTION OPENED\n");
+
+        console.log("\n# CONNECTION OPENED");
+        rl.prompt();
     }
 
     conn.on('message', function(msg) {
-        console.log(msg.utf8Data);
+        console.log(`\n< ${msg.utf8Data}`);
+        rl.prompt();
     });
 
     conn.on('close', function(reason, desc) {
-        console.log("\nCONNECTION CLOSED\n");
         conn = null;
+
+        rl.prompt();
+        console.log("\n# CONNECTION CLOSED");
     });
 });
-
 
 rl.on('line', function(input) {
     if(conn) {
         conn.sendUTF(input);
     }
+
+    rl.prompt();
 });
+
+rl.prompt();
 
 
 
