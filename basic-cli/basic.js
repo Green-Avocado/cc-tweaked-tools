@@ -36,6 +36,11 @@ wss.on('request', function(req) {
         console.log("\n# CONNECTION OPENED");
         rl.prompt();
     }
+    else
+    {
+        request.reject();
+        return;
+    }
 
     conn.on('message', function(msg) {
         console.log(`\n< ${msg.utf8Data}`);
