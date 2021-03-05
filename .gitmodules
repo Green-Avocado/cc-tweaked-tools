@@ -1,0 +1,3 @@
+[submodule "cctweaked-lib/lib/libwebsockets"]
+	path = cctweaked-lib/dependencies/libwebsockets
+	url = https://libwebsockets.org/repo/libwebsockets
