@@ -33,7 +33,7 @@ wss.on('request', function(req) {
     if(!conn) {
         conn = req.accept();
 
-        console.log("\n# CONNECTION OPENED");
+        console.log("# CONNECTION OPENED");
     }
     else
     {
@@ -42,14 +42,14 @@ wss.on('request', function(req) {
     }
 
     conn.on('message', function(msg) {
-        console.log(`\n< ${msg.utf8Data}`);
+        console.log(`< ${msg.utf8Data}`);
         rl.prompt();
     });
 
     conn.on('close', function(reason, desc) {
         conn = null;
 
-        console.log("\n# CONNECTION CLOSED");
+        console.log("# CONNECTION CLOSED");
     });
 });
 
