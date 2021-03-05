@@ -65,6 +65,7 @@ server.listen(PORT);
 
 rl.on('SIGINT', function() {
     console.log('\nGracefully shutting down from SIGINT (Ctrl-C)\n');
+    wss.shutDown();
     process.exit();
 });
 
