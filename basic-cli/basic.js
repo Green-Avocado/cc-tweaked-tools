@@ -34,7 +34,6 @@ wss.on('request', function(req) {
         conn = req.accept();
 
         console.log("\n# CONNECTION OPENED");
-        rl.prompt();
     }
     else
     {
@@ -51,7 +50,6 @@ wss.on('request', function(req) {
         conn = null;
 
         console.log("\n# CONNECTION CLOSED");
-        rl.prompt();
     });
 });
 
