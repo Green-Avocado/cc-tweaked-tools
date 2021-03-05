@@ -59,11 +59,7 @@ rl.on('line', function(input) {
     if(conn) {
         conn.sendUTF(input);
     }
-
-    rl.prompt();
 });
-
-rl.prompt();
 
 
 
